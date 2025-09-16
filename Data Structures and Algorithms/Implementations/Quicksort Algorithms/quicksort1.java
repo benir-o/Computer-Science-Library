@@ -1,43 +1,40 @@
 
 public class quicksort1 {
-
-    public void swapArrayElements(int[] nums, int a, int b) {
-        int temp = nums[a];
-        nums[a] = nums[b];
-        nums[b] = temp;
+    void swap(int[] myArray, int a, int b) {
+        int temp = myArray[a];
+        myArray[a] = myArray[b];
+        myArray[b] = temp;
     }
 
-    public void quicksortArray(int[] array, int left, int right) {
+    void sortArray(int[] myset, int left, int right) {
         if (left >= right) {
             return;
         }
-        int pivot = partitionArray(array, left, right);
-        quicksortArray(array, pivot + 1, right);
-        quicksortArray(array, left, pivot - 1);
+        int pivot = partition(myset, left, right);
+        sortArray(myset, left, pivot - 1);
+        sortArray(myset, pivot + 1, right);
 
     }
 
-    public int partitionArray(int[] testArray, int left, int right) {
+    int partition(int[] theSet, int low, int high) {
+        int mypivot = theSet[high];
         int i = -1;
-        int pivot = testArray[right];
-
-        for (int j = 0; j < testArray.length - 1; j++) {
-            if (testArray[j] < pivot) {
+        for (int j = 0; j < theSet.length - 1; j++) {
+            if (theSet[j] < mypivot) {
                 i++;
-                swapArrayElements(testArray, i, j);
+                swap(theSet, i, j);
             }
         }
-        swapArrayElements(testArray, i + 1, right);
+        swap(theSet, i + 1, high);
         return i + 1;
     }
 
     public static void main(String[] args) {
-        var item = new quicksort1();
-        int[] digits = { 3, 52, 2, 4, 9, 7, 6 };
-        item.quicksortArray(digits, 0, digits.length - 1);
-        for (int i = 0; i < digits.length; i++) {
-            System.out.print(digits[i] + " ");
+        var test1 = new quicksort1();
+        int[] testArray = { 3, -2, -1, 34, 15, 11, 4, 8 };
+        test1.sortArray(testArray, 0, testArray.length - 1);
+        for (var item : testArray) {
+            System.out.print(item + " ");
         }
     }
-
 }
