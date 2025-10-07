@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION["username"])) {
+    header("Location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,6 +25,8 @@ session_start();
 <?php
 
 
+$_SESSION["username"] = "Benir";
+$_SESSION["password"] = "Benir";
 if (isset($_POST["logout"])) {
     session_destroy();
     header("Location: index.php");
