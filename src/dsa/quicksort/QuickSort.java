@@ -1,3 +1,5 @@
+package dsa.quicksort;
+
 public class QuickSort {
 
     public void swap(int[] array, int i, int j) {

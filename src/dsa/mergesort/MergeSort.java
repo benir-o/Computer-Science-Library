@@ -1,3 +1,5 @@
+package dsa.mergesort;
+
 public class MergeSort {
 
     public void mergeSort(int[] array) {

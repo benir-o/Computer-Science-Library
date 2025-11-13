@@ -1,3 +1,5 @@
+package concurrency_multithreading;
+
 public class MyThread extends Thread {
     // by extension, we override the run method of the thread class
     public void run() {

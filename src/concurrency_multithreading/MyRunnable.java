@@ -1,3 +1,5 @@
+package concurrency_multithreading;
+
 public class MyRunnable implements Runnable {
     public void run() {
         System.out.println("Thread is running");

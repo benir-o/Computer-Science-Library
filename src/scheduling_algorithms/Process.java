@@ -1,3 +1,4 @@
+package scheduling_algorithms;
 
 class Process {
     int pid; // Process ID

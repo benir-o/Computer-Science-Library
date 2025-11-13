@@ -1,3 +1,5 @@
+package scheduling_algorithms;
+
 import java.util.*;
 
 public class FCFS {
