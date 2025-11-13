@@ -1,4 +1,4 @@
-package scheduling_algorithms;
+package scheduling_algorithms.SRTF;
 
 import java.util.Scanner;
 

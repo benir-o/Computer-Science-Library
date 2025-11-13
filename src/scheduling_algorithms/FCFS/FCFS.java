@@ -1,4 +1,4 @@
-package scheduling_algorithms;
+package scheduling_algorithms.FCFS;
 
 import java.util.*;
 
