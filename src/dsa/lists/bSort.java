@@ -38,7 +38,10 @@ public class bSort {
 
     public static void main(String[] args) {
         bSort bucketSort = new bSort();
-        int[] numbersss = { 1, 1, 4, 3, 3, 3, 3, 3 };
-        System.out.println(bucketSort.returnTopElements(numbersss, 2));
+        int[] numbersss = { 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5 };
+        int[] freqElements = bucketSort.returnTopElements(numbersss, 2);
+        for (var number : freqElements) {
+            System.out.print(number + " ");
+        }
     }
 }
