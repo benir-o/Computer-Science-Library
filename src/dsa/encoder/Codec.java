@@ -23,8 +23,9 @@ public class Codec {
         List<String> decodedStrings = new ArrayList<>();
 
         char[] charArray = string.toCharArray();
-        StringBuilder sb = new StringBuilder();
+
         for (int i = 0; i < charArray.length; i++) {
+            StringBuilder sb = new StringBuilder();
             while (charArray[i] != DELIMITER) {
                 sb.append(charArray[i++]);
             }
