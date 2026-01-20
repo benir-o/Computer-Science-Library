@@ -1,6 +1,5 @@
 package dsa.encoder;
 
-import java.net.http.WebSocketHandshakeException;
 import java.util.*;
 
 public class codExecution {
