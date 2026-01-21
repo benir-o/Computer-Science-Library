@@ -9,8 +9,8 @@ import java.util.Set;
 public class matrixmultiplication {
     Map<Integer, List<Integer>> numbersToMultiply = new HashMap<>();
 
-    public List<Integer> productExceptSelf(int[] nums) {
-        List<Integer> producList = new ArrayList<>();
+    public int[] productExceptSelf(int[] nums) {
+        List<Integer> productList = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             List<Integer> associativeList = new ArrayList<>();
             int k = 0;
@@ -34,16 +34,10 @@ public class matrixmultiplication {
         Set<Integer> newNums = numbersToMultiply.keySet();
         for (var thing2 : newNums) {
             List<Integer> productionsquare = numbersToMultiply.get(thing2);
-            int product = productionsquare.get(0);
-            for (var thing1 : productionsquare) {
-                System.out.print(thing1 + " ");
-            }
-            System.out.println();
-
+            getProduct(productionsquare);
+            productList.add(getProduct(productionsquare));
         }
-
-        return producList;
-
+        return convertToArray(productList);
     }
 
     public static int getProduct(List<Integer> container) {
@@ -54,14 +48,22 @@ public class matrixmultiplication {
         return product;
     }
 
+    public static int[] convertToArray(List<Integer> container) {
+        int[] products = new int[container.size()];
+        for (int h = 0; h < products.length; h++) {
+            products[h] = container.get(h);
+        }
+        return products;
+    }
+
     public static void main(String[] args) {
         int[] nums = { 1, 2, 3, 4 };
         var item = new matrixmultiplication();
-        // item.productExceptSelf(nums);
-        // List<Integer> newList =
-        // for (var thing : newList) {
-        // System.out.print(thing + " ");
-        // }
+
+        int[] newList = item.productExceptSelf(nums);
+        for (var thing : newList) {
+            System.out.print(thing + " ");
+        }
 
     }
 }
