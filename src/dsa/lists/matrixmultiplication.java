@@ -34,7 +34,6 @@ public class matrixmultiplication {
         Set<Integer> newNums = numbersToMultiply.keySet();
         for (var thing2 : newNums) {
             List<Integer> productionsquare = numbersToMultiply.get(thing2);
-            getProduct(productionsquare);
             productList.add(getProduct(productionsquare));
         }
         return convertToArray(productList);
@@ -57,7 +56,7 @@ public class matrixmultiplication {
     }
 
     public static void main(String[] args) {
-        int[] nums = { 1, 2, 3, 4 };
+        int[] nums = { 6, 5, 3, 4 };
         var item = new matrixmultiplication();
 
         int[] newList = item.productExceptSelf(nums);
