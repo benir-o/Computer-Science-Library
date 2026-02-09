@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    gap: 10px;
+    background-color: lightcoral;
+}
+p{
+    background-color: darkseagreen;
+}
+@media (min-width: 319px) and (max-width: 480px){
+    .container{
+        display: block;
+        background-color: lightsalmon;
+    }
+
+}
+@media (min-width: 481px )and (max-width: 1200px){
+    .container{
+        display:block;
+        background-color: powderblue;
+    }
+
+}
+@media(min-width:1201px) and (max-width: 1600px){
+    .container{
+        background-color: black;
+    }
+
+}
