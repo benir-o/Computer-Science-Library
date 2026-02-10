@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Flexbox Pricing Table</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,22 +16,34 @@
       }
       .pricing-container {
         display: flex;
-        justify-content: center;
+        flex-direction: row;
         flex-wrap: wrap;
-        align-content: center;
+        align-items: center;
+        justify-content: center;
         gap: 10px;
         min-height: 100vh;
-        /* background-color: powderblue; */
+        padding: 1rem;
+        background-color: powderblue;
       }
       .pricing-plan {
-        /* background-color: lightsalmon; */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem;
         text-align: center;
         border-radius: 10px;
       }
       .plan-button {
         border-radius: 5px;
         background-color: limegreen;
-        height: 30px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background-color 0.2s;
+      }
+      .plan-button:hover {
+        background-color: #32cd32;
       }
       .pricing-plan div {
         margin-top: 10px;
@@ -49,47 +63,64 @@
       @media (min-width: 319px) and (max-width: 480px) {
         .pricing-container {
           background-color: seagreen;
+          flex-direction: column;
+          gap: 1.5rem;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
         }
         .pricing-plan {
           background-color: blanchedalmond;
+          flex-direction: column;
+          padding: 1.5rem;
+          width: 80%;
+          align-content: space-evenly;
+          /* max-width: 320px; */
+          border-radius: 12px;
         }
       }
       @media (min-width: 481px) and (max-width: 1200px) {
         .pricing-container {
-          display: flex;
-          flex-direction: column; /* KEY: stack vertically */
-          gap: 1.5rem;
-          padding: 1rem;
-          align-items: center;
           background-color: #ffc93c;
           flex-direction: column;
-          justify-content: center;
+          gap: 1.5rem;
         }
         .pricing-plan {
+          flex-direction: column;
           background-color: #9fd3c7;
-          width: 100%;
-          max-width: 320px; /* Perfect iPhone width */
+          width: 90%;
+          padding: 1.5rem;
           border-radius: 12px;
+          height: 100%;
+        }
+        .plan-button {
+          width: 80%;
+          height: 44px;
         }
       }
       @media (min-width: 1201px) and (max-width: 1600px) {
         .pricing-container {
           background-color: #bbe4e9;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 2rem;
         }
         .pricing-plan {
           background-color: #5585b5;
-          width: 100%;
-          max-width: 320px;
+          width: 280px;
+          padding: 1.5rem;
         }
       }
       @media (min-width: 1601px) {
         .pricing-container {
           background-color: #8ef6e4;
+          flex-direction: row;
+          gap: 2rem;
         }
         .pricing-plan {
           background-color: #edb1f1;
-          width: 100%;
-          max-width: 320px;
+          width: 300px;
+          padding: 2rem;
         }
       }
     </style>
